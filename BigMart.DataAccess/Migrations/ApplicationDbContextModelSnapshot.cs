@@ -21,7 +21,7 @@ namespace BigMart.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BigMartWeb.Models.Category", b =>
+            modelBuilder.Entity("BigMart.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,4 +1,4 @@
-using BigMartWeb.Models;
+using BigMart.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace BigMartWeb.Migrations
+namespace BigMart.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

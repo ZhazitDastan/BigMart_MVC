@@ -1,4 +1,4 @@
-using BigMartWeb.Data;
+using BigMart.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

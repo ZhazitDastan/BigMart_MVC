@@ -1,9 +1,9 @@
 ﻿
 
-using BigMartWeb.Models;
+using BigMart.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BigMartWeb.Data
+namespace BigMart.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,5 +1,6 @@
-﻿using BigMartWeb.Data;
-using BigMartWeb.Models;
+﻿
+using BigMart.DataAccess.Data;
+using BigMart.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BigMartWeb.Controllers

@@ -1,6 +1,4 @@
-﻿
-using BigMart.DataAccess.Data;
-using BigMart.DataAccess.Repository.IRepository;
+﻿using BigMart.DataAccess.Repository.IRepository;
 using BigMart.Models;
 using Microsoft.AspNetCore.Mvc;
 

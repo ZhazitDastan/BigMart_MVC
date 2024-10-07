@@ -4,14 +4,15 @@ using BigMart.DataAccess.Repository.IRepository;
 using BigMart.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BigMartWeb.Controllers
+namespace BigMartWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
         public CategoryController(IUnitOfWork unitOfWork)
         {
-             _unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
 
         }
         public IActionResult Index()
@@ -52,7 +53,7 @@ namespace BigMartWeb.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id==id) ;// Method that Ho I can get element by id.
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);// Method that Ho I can get element by id.
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();
 
@@ -86,7 +87,7 @@ namespace BigMartWeb.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id == id);// Method that Ho I can get element by id.
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);// Method that Ho I can get element by id.
 
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();

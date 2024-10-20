@@ -1,11 +1,12 @@
 ﻿
 using BigMart.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BigMart.DataAccess.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
 
 
@@ -15,6 +16,7 @@ namespace BigMart.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; } //Create table Category
         public DbSet<Product> Products { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) // Seed category table
         {

@@ -1,6 +1,8 @@
 ﻿using BigMart.DataAccess.Repository.IRepository;
 using BigMart.Models;
 using BigMart.Models.ViewModels;
+using BigMart.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +11,7 @@ using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 namespace BigMartWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

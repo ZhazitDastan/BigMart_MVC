@@ -25,9 +25,19 @@ namespace BigMart.DataAccess.Repository
             dbSet.Add(entity);
         }
 
-        public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null)
+        public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = false)
         {
-            IQueryable<T> query = dbSet;
+            IQueryable<T> query;
+            if (tracked)
+            {
+                query = dbSet;
+               
+            }
+            else
+            {
+                query = dbSet.AsNoTracking();
+                
+            }
             query = query.Where(filter);
             if (!string.IsNullOrEmpty(includeProperties))
             {
@@ -38,12 +48,18 @@ namespace BigMart.DataAccess.Repository
                 }
             }
             return query.FirstOrDefault();
+
         }
 
         //Cateegory, CoverType
-        public IEnumerable<T> GetAll(string? includeProperties = null)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
+            if(filter != null)
+            {
+                query = query.Where(filter);
+            }
+            
             if (!string.IsNullOrEmpty(includeProperties))
             {
                 foreach(var includeProp in includeProperties
